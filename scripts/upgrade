@@ -104,7 +104,7 @@ if ynh_compare_current_package_version --comparison lt --version 0.0.1.2023-01-0
 	ynh_remove_app_dependencies
 fi
 
-ynh_install_apps --apps="$app_dependencies"
+yunohost app upgrade elasticsearch8 -F -u https://github.com/YunoHost-Apps/elasticsearch8_ynh/tree/master
 ynh_install_nodejs --nodejs_version=$NODEJS_VERSION
 ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
 
